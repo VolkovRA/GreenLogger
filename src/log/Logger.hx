@@ -11,6 +11,46 @@ import js.lib.Error;
 class Logger 
 {
 	/**
+	 * Преобразовать строку в LogLevel.
+	 * Переводит указанную строку LogLevel или возвращает null, если преобразование не удалось. (Не известная строка)
+	 * Ожидаемые значения: "ERROR", "WARN", "INFO", "DEBUG", "TRACE". (Регистр не важен)
+	 * @param	level Уровень логируемых сообщений.
+	 */
+	static public function stringToLevel(level:String):LogLevel {
+		if (level == null)
+			return null;
+		
+		switch (level.toUpperCase()) {
+			case "ERROR":	return LogLevel.ERROR;
+			case "WARN":	return LogLevel.WARN;
+			case "INFO":	return LogLevel.INFO;
+			case "DEBUG":	return LogLevel.DEBUG;
+			case "TRACE":	return LogLevel.TRACE;
+			default:		return null;
+		}
+	}
+	
+	/**
+	 * Преобразовать LogLevel в строку.
+	 * Переводит указанный LogLevel в простую строку или null, если перевести не удалось. (Передан null)
+	 * Возвращаемые значения: "ERROR", "WARN", "INFO", "DEBUG", "TRACE".
+	 * @param	level Уровень логируемых сообщений.
+	 */
+	static public function levelToString(level:LogLevel):String {
+		if (level == null)
+			return null;
+		
+		switch (level) {
+			case LogLevel.ERROR:	return "ERROR";
+			case LogLevel.WARN:		return "WARN";
+			case LogLevel.INFO:		return "INFO";
+			case LogLevel.DEBUG:	return "DEBUG";
+			case LogLevel.TRACE:	return "TRACE";
+			default:				return null;
+		}
+	}
+	
+	/**
 	 * Цветной текст.
 	 * Если true, логгер подкрашивает каждое сообщение.
 	 * Работает на основе добавления управляющих ANSI символов, не работает в Windows.
