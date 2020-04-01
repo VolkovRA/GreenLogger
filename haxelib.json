@@ -1,0 +1,11 @@
+{
+	"name": "GreenLogger",
+	"url": "https://github.com/VolkovRA/GreenLogger/blob/master/README.md",
+	"license": "MIT",
+	"tags": ["log", "logger"],
+	"description": "The very simple colored (In OS terminal) logger for Haxe, cross platform",
+	"version": "1.0.0",
+	"releasenote": "First version",
+	"contributors": ["VolkovRA"],
+	"classPath": "src"
+}
