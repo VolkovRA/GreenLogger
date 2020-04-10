@@ -7,5 +7,5 @@
 	"version": "1.0.1",
 	"releasenote": "First version",
 	"contributors": ["VolkovRA"],
-	"classPath": "lib/log"
+	"classPath": "lib"
 }
